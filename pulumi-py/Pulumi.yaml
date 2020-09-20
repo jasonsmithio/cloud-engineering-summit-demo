@@ -1,0 +1,7 @@
+name: gke-serverless
+description: A Google Kubernetes Engine (GKE) cluster with Cloud Run and Knative
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+

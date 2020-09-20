@@ -1,0 +1,12 @@
+__pycache__
+venv
+
+node_modules/
+package-lock.json
+Pulumi.ts-dev.yaml
+
+/bin/
+Pulumi.demo.yaml
+
+pulumi-old/
+*-use.yaml

@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineResource
+metadata:
+  # The name of the pipeline resource
+  name: example-github
+spec:
+  type: git
+  params:
+  # The revision/branch of the repository
+  - name: revision
+    value: master
+  # The URL of the repository
+  - name: url
+    value: https://https://github.com/TheJaySmith/cncf-streaming-app

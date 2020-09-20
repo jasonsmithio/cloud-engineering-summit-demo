@@ -1,0 +1,9 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineResource
+metadata:
+  name: gitlab-image
+spec:
+  type: image
+  params:
+  - name: url
+    value: gcr.io/YOUR-GCP-PROJECT/example-app

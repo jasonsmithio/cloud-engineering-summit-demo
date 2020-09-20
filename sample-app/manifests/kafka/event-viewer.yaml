@@ -1,0 +1,10 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: event-viewer
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+        - image: gcr.io/PROJECT_ID/event-viewer:v1
