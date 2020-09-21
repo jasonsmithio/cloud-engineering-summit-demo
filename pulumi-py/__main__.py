@@ -108,6 +108,7 @@ def omit_istio_namespace(obj, opts):
 istio_crd = ConfigFile(
     "istio_crd",
     file="https://raw.githubusercontent.com/knative-sandbox/net-istio/master/third_party/istio-stable/istio-crds.yaml",
+    opts=ResourceOptions(provider=k8s_provider),
 )
 
 istio_minimal = ConfigFile(
@@ -128,7 +129,7 @@ knative_operator = ConfigGroup(
 
 knative_istio = ConfigGroup(
     "knative_istio",
-    files=["https://github.com/knative-sandbox/net-istio/blob/master/third_party/istio-stable/istio-knative-extras.yaml"],
+    files=["https://raw.githubusercontent.com/knative-sandbox/net-istio/master/third_party/istio-stable/istio-knative-extras.yaml"],
     opts=ResourceOptions(provider=k8s_provider),
 )
 

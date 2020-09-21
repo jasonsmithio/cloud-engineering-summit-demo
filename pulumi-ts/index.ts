@@ -34,19 +34,20 @@ const cluster = new gcp.container.Cluster(`${projectName}`, {
             "https://www.googleapis.com/auth/devstorage.read_only",
             "https://www.googleapis.com/auth/logging.write",
             "https://www.googleapis.com/auth/monitoring",
+            "https://www.googleapis.com/auth/cloud-platform",
         ],
         labels: {"instanceType": "n1-standard-2"},
         tags: ["pulumi-knative"],
         // See: https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/NodeConfig
         // Needed for workload identity to validate pods.
-        workloadMetadataConfig: {
-            nodeMetadata: "GKE_METADATA_SERVER",
-        },
+        //workloadMetadataConfig: {
+        //    nodeMetadata: "GKE_METADATA_SERVER",
+        //},
     },
     masterAuth: {username: "example-user", password: password},
     // Allow k8s ServiceAccounts to use GCP ServiceAccounts.
     // https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity
-    workloadIdentityConfig: {identityNamespace: `${config.gcpProject}.svc.id.goog`},
+    //workloadIdentityConfig: {identityNamespace: `${config.gcpProject}.svc.id.goog`},
 });
 export const clusterName = cluster.name;
 export const kubeconfig = utils.createKubeconfig(clusterName, cluster.endpoint, cluster.masterAuth);

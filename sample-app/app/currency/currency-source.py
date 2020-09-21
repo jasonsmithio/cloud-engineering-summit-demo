@@ -17,7 +17,12 @@ PROJECT_ID = os.environ.get('PROJECT_ID')
 
 secrets = secretmanager.SecretManagerServiceClient()
 
-ALPHAVANTAGE_KEY = secrets.access_secret_version("projects/"+PROJECT_ID+"/secrets/alpha-vantage-key/versions/1").payload.data.decode("utf-8")
+ALPHAVANTAGE_KEY = secrets.access_secret_version(request={"name" :"projects/"+PROJECT_ID+"/secrets/alpha-vantage-key/versions/1"})
+
+ALPHAVANTAGE_KEY = ALPHAVANTAGE_KEY.payload.data.decode("utf-8")
+#client = secretmanager.SecretManagerServiceClient()
+
+#secret = client.get_secret(request={'name': "alpha-vantage-key"})
 
 CURR1 = 'USD'
 CURR2 = 'JPY'
