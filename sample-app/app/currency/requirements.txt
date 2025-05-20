@@ -2,7 +2,7 @@ pylint==2.4.0
 google-cloud==0.34.0
 google-cloud-secret-manager==2.0.0
 berglas-python==0.3.3
-Flask==3.0.0
+Flask==3.1.1
 kafka-python==2.0.1
 gunicorn==22.0.0
 cloudevents==0.2.4
