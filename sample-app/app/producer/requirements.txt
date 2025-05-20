@@ -1,6 +1,6 @@
 pylint==2.4.0
 Flask==3.0.0
 kafka-python==2.0.1
-gunicorn==22.0.0
+gunicorn==23.0.0
 cloudevents==0.2.4
 requests>=2.32.0
