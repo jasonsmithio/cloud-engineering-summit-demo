@@ -1,5 +1,5 @@
 pylint==2.4.0
-Flask==3.0.0
+Flask==3.1.1
 kafka-python==2.0.1
 gunicorn==23.0.0
 cloudevents==0.2.4
